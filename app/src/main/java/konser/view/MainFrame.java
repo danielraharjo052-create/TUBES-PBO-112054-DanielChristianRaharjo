@@ -25,6 +25,10 @@ import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
+<<<<<<< HEAD
+=======
+import javax.swing.JOptionPane;
+>>>>>>> f3ee2f2c478951a8275441b956bdcbfe216067de
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JScrollPane;
@@ -358,7 +362,11 @@ public class MainFrame extends JFrame {
         if (!p1.equals(p2)) { registerMessage.setText("Konfirmasi password tidak sama."); return; }
         try {
             authController.registerCustomer(regUsername.getText(), p1);
+<<<<<<< HEAD
             showStatus("Akun Customer berhasil dibuat. Silakan login.");
+=======
+            JOptionPane.showMessageDialog(this, "Akun Customer berhasil dibuat. Silakan login.", "Registrasi berhasil", JOptionPane.INFORMATION_MESSAGE);
+>>>>>>> f3ee2f2c478951a8275441b956bdcbfe216067de
             username.setText(regUsername.getText()); password.setText("");
             regUsername.setText(""); regPassword.setText(""); regConfirm.setText("");
             pageLayout.show(pages, "LOGIN");
@@ -406,6 +414,7 @@ public class MainFrame extends JFrame {
     }
     private void deleteSelectedConcert() {
         Concert selected = concertList.getSelectedValue();
+<<<<<<< HEAD
 
         if (selected == null) {
             showStatus("Pilih konser yang ingin dihapus.");
@@ -423,6 +432,13 @@ public class MainFrame extends JFrame {
         } catch (Exception ex) {
             showStatus(ex.getMessage());
         }
+=======
+        if (selected == null) { showStatus("Pilih konser yang ingin dihapus."); return; }
+        int confirm = JOptionPane.showConfirmDialog(this, "Hapus konser '" + selected.getName() + "'?", "Konfirmasi", JOptionPane.YES_NO_OPTION);
+        if (confirm != JOptionPane.YES_OPTION) return;
+        try { concertController.deleteConcert(currentUser, selected.getId()); showStatus("Konser berhasil dihapus."); loadConcerts(); loadTickets(); }
+        catch (Exception ex) { showStatus(ex.getMessage()); }
+>>>>>>> f3ee2f2c478951a8275441b956bdcbfe216067de
     }
     private void bookTicket(String method) {
         Ticket ticket = ticketList.getSelectedValue();

@@ -25,4 +25,7 @@ desktop.ini
 *.bak
 *.backup
 
+<<<<<<< HEAD
 \n# Konfigurasi database pribadi tiap anggota\nconfig/database.properties\n
+=======
+>>>>>>> f3ee2f2c478951a8275441b956bdcbfe216067de

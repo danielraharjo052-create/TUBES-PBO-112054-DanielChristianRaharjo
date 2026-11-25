@@ -1,5 +1,6 @@
 package konser.config;
 
+<<<<<<< HEAD
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
@@ -15,10 +16,21 @@ public final class AppConfig {
     public static final String DATABASE = getRequired("db.name");
     public static final String USER = getRequired("db.username");
     public static final String PASSWORD = getRequired("db.password");
+=======
+public final class AppConfig {
+
+    public static final String HOST = "localhost";
+    public static final String PORT = "5432";
+    public static final String DATABASE = "database_tiket";
+
+    public static final String USER = "postgres";
+    public static final String PASSWORD = "2007";
+>>>>>>> f3ee2f2c478951a8275441b956bdcbfe216067de
 
     private AppConfig() {
         // mencegah objek konfigurasi dibuat
     }
+<<<<<<< HEAD
 
     private static Properties loadProperties() {
         Path configPath = findConfigFile();
@@ -68,4 +80,6 @@ public final class AppConfig {
         }
         return value.trim();
     }
+=======
+>>>>>>> f3ee2f2c478951a8275441b956bdcbfe216067de
 }
